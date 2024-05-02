@@ -9,7 +9,8 @@
     "web": "expo start --web",
     "ts:check": "tsc",
     "format:check": "npx prettier --check \"**/*.{js,jsx,json,ts,tsx}\"",
-    "format": "npx prettier --write \"**/*.{js,jsx,json,ts,tsx}\""
+    "format": "npx prettier --write \"**/*.{js,jsx,json,ts,tsx}\"",
+    "lint": "npx eslint \"src/**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "expo": "~50.0.17",
