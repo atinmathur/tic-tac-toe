@@ -1,12 +1,18 @@
 import React, { useCallback } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { useFonts, Lato_400Regular } from "@expo-google-fonts/lato";
+import { StyleSheet, View } from "react-native";
+import {
+  useFonts,
+  Lato_400Regular,
+  Lato_700Bold,
+} from "@expo-google-fonts/lato";
 import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
+import { Text } from "@components";
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
     Lato_400Regular,
+    Lato_700Bold,
   });
 
   const onLayoutView = useCallback(async () => {
@@ -21,7 +27,9 @@ export default function App() {
   return (
     <View style={styles.container} onLayout={onLayoutView}>
       <StatusBar style="auto" />
-      <Text style={{ fontFamily: "Lato_400Regular", fontSize: 24 }}>Index</Text>
+      <Text weight="400" style={{ color: "red", fontSize: 24 }}>
+        Index
+      </Text>
     </View>
   );
 }
