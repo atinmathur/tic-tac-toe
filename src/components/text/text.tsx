@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import { Text as NativeText, TextProps as NativeTextProps } from "react-native";
 
 type TextProps = {
@@ -6,7 +6,12 @@ type TextProps = {
   children: ReactNode;
 } & NativeTextProps;
 
-export default function Text({ children, style, weight, ...props }: TextProps) {
+export default function Text({
+  children,
+  style,
+  weight,
+  ...props
+}: TextProps): ReactElement {
   const fontFamily = weight === "700" ? "Lato_700Bold" : "Lato_400Regular";
   return (
     <NativeText {...props} style={[{ fontFamily }, style]}>
