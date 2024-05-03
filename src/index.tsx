@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { StyleSheet, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { AppBootstrap, Text } from "@components";
 
-export default function App() {
+export default function App(): ReactElement {
   return (
     <AppBootstrap>
       <View style={styles.container}>

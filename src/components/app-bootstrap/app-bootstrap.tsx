@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback } from "react";
+import React, { ReactElement, ReactNode, useCallback } from "react";
 import { View } from "react-native";
 import {
   useFonts,
@@ -12,7 +12,9 @@ type AppBootstrapProps = {
   children: ReactNode;
 };
 
-export default function AppBootstrap({ children }: AppBootstrapProps) {
+export default function AppBootstrap({
+  children,
+}: AppBootstrapProps): ReactElement {
   const [fontsLoaded, fontError] = useFonts({
     Lato_400Regular,
     Lato_700Bold,
@@ -25,7 +27,7 @@ export default function AppBootstrap({ children }: AppBootstrapProps) {
   }, [fontsLoaded, fontError]);
 
   if (!fontsLoaded && !fontError) {
-    return null;
+    return <></>;
   }
 
   return (
