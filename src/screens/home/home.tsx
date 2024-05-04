@@ -17,7 +17,7 @@ export default function Home({ navigation }: HomeProps): ReactElement {
         <View style={styles.buttons}>
           <Button
             style={styles.button}
-            onPress={() => alert(true)}
+            onPress={() => navigation.navigate("SinglePlayerGame")}
             title="Single Player"
           />
           <Button
