@@ -1,12 +1,10 @@
-import React, { ReactElement, ReactNode, useCallback } from "react";
-import { View } from "react-native";
+import React, { ReactElement, ReactNode, useCallback, useEffect } from "react";
 import {
   useFonts,
   Lato_400Regular,
   Lato_700Bold,
 } from "@expo-google-fonts/lato";
 import * as SplashScreen from "expo-splash-screen";
-import styles from "./app-bootstrap.styles";
 
 type AppBootstrapProps = {
   children: ReactNode;
@@ -26,13 +24,9 @@ export default function AppBootstrap({
     }
   }, [fontsLoaded, fontError]);
 
-  if (!fontsLoaded && !fontError) {
-    return <></>;
-  }
+  useEffect(() => {
+    onLayoutView();
+  }, [onLayoutView]);
 
-  return (
-    <View style={styles.container} onLayout={onLayoutView}>
-      {children}
-    </View>
-  );
+  return !fontsLoaded && !fontError ? <></> : <>{children}</>;
 }

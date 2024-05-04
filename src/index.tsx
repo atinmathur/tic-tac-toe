@@ -1,26 +1,11 @@
 import React, { ReactElement } from "react";
-import { StyleSheet, View } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { AppBootstrap, Text } from "@components";
+import { AppBootstrap } from "@components";
+import Navigator from "@config/navigator";
 
 export default function App(): ReactElement {
   return (
     <AppBootstrap>
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <Text weight="400" style={{ color: "red", fontSize: 24 }}>
-          Index
-        </Text>
-      </View>
+      <Navigator />
     </AppBootstrap>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "# ",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
