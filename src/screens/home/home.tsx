@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
-import { Button, Text, View } from "react-native";
-import styles from "./home.styles";
+import { Button } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { StackNavigatorParams } from "@config/navigator";
+import { GradientBackground } from "@components";
 
 type HomeProps = {
   navigation: StackNavigationProp<StackNavigatorParams, "Home">;
@@ -10,14 +10,13 @@ type HomeProps = {
 
 export default function Home({ navigation }: HomeProps): ReactElement {
   return (
-    <View style={styles.container}>
-      <Text>Home</Text>
+    <GradientBackground>
       <Button
         title="Go to Game"
         onPress={() => {
           navigation.navigate("Game", { gameId: "123" });
         }}
       />
-    </View>
+    </GradientBackground>
   );
 }
